@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  SiHtml5, SiJavascript, SiTypescript, SiPhp, SiPython, 
-  SiReact, SiNextdotjs, SiTailwindcss, SiBootstrap, SiNodedotjs, 
-  SiExpress, SiLaravel, SiFlask, SiDjango, SiFirebase,
-  SiGit, SiGithub, SiFigma, SiVite, SiDocker,
-  SiKubernetes, SiGooglecloud, SiPostman
+  SiHtml5, SiJavascript, SiTypescript, SiPython, 
+  SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, 
+  SiLaravel, SiDjango, SiFirebase,
+  SiGit, SiDocker
 } from 'react-icons/si';
 import { FaCss3Alt } from 'react-icons/fa';
 import { VscCode } from 'react-icons/vsc';
