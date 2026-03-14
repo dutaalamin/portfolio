@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { SiReact, SiTypescript, SiTailwindcss, SiJavascript, SiNextdotjs } from 'react-icons/si';
 
 const Experience = () => {
   const experiences = [
