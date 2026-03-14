@@ -1,8 +1,7 @@
 import './App.css';
-import { FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { ParallaxProvider } from 'react-scroll-parallax';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import Hero from './components/Hero';
