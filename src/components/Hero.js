@@ -15,7 +15,7 @@ const Hero = () => {
           <img
             src="/images/duta_full.png"
             alt="Full Avatar"
-            className="h-full object-contain drop-shadow-2xl"
+            className="h-full object-contain drop-shadow-2xl scale-125 md:scale-135 transition-transform duration-700"
           />
         </div>
 
@@ -59,7 +59,7 @@ const Hero = () => {
                 >
                   Message
                 </button>
-                <button 
+                <button
                   onClick={() => window.open('https://linkedin.com/in/dutaalamin', '_blank')}
                   className="bg-[#e3e5e6] hover:bg-[#d6d9da] text-slate-700 font-black py-2.5 px-6 rounded-md transition-colors text-[10px] md:text-xs uppercase tracking-tight whitespace-nowrap min-w-[100px]"
                 >
