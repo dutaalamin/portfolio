@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Hero from './components/Hero';
 import About from './components/About';
 import Experience from './components/Experience';
+import Profile from './components/Profile';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 
@@ -16,6 +17,7 @@ function Sidebar() {
   const navigate = useNavigate();
   const menuItems = [
     { name: 'Home', icon: '🏠', id: 'home' },
+    { name: 'Profile', icon: '👤', id: 'profile' },
     { name: 'Experience', icon: '🏢', id: 'experience' },
     { name: 'Messages', icon: '✉️', id: 'contact' },
   ];
@@ -38,6 +40,7 @@ function Sidebar() {
               key={item.name}
               onClick={() => {
                 if (item.id === 'experience') navigate('/experience');
+                else if (item.id === 'profile') navigate('/profile');
                 else {
                   navigate('/');
                   setTimeout(() => document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' }), 100);
@@ -59,6 +62,7 @@ function Sidebar() {
             key={item.name}
             onClick={() => {
               if (item.id === 'experience') navigate('/experience');
+              else if (item.id === 'profile') navigate('/profile');
               else {
                 navigate('/');
                 setTimeout(() => document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' }), 100);
@@ -178,6 +182,16 @@ function App() {
                       className="w-full transition-all px-4 sm:px-8 py-8"
                     >
                       <Experience />
+                    </motion.div>
+                  } />
+                  <Route path="/profile" element={
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      className="w-full transition-all px-4 sm:px-8 py-8"
+                    >
+                      <Profile />
                     </motion.div>
                   } />
                 </Routes>
