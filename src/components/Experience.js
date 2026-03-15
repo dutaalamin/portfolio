@@ -75,7 +75,7 @@ const Experience = () => {
               className="bg-white p-6 flex flex-col md:flex-row gap-6 transition-all group rounded-xl border border-transparent hover:border-slate-100 hover:shadow-lg hover:shadow-indigo-100/40"
             >
               <div className="w-16 h-16 md:w-20 md:h-20 bg-indigo-50 rounded-xl flex-shrink-0 flex items-center justify-center text-4xl transition-all duration-500 shadow-inner">
-                {idx === 0 ? '🏭' : idx === 1 ? '💻' : idx === 2 ? '🤖' : '📜'}
+                {idx === 0 ? '🏭' : idx === 1 ? '💻' : idx === 2 ? '🤖' : idx === 3 ? '🌋' : '👨‍💻'}
               </div>
 
               <div className="flex-1 space-y-3">
