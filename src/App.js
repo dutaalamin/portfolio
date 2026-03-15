@@ -26,7 +26,13 @@ function Sidebar() {
     <>
       <aside className="fixed left-0 top-0 bottom-0 w-48 bg-white border-r border-slate-200 hidden md:flex flex-col py-4 z-40">
         <div className="px-4 mb-6">
-          <div className="flex items-center gap-3 p-2 hover:bg-slate-50 rounded-lg cursor-pointer transition-colors group">
+          <div 
+            onClick={() => {
+              navigate('/');
+              setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
+            }}
+            className="flex items-center gap-3 p-2 hover:bg-slate-50 rounded-lg cursor-pointer transition-colors group"
+          >
             <div className="w-10 h-10 rounded-full overflow-hidden bg-slate-100 border border-slate-200">
               <img src="/images/duta.png" alt="Avatar" className="w-full h-full object-cover" />
             </div>
