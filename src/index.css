@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #f2f4f5 !important;
+    color: #1b1d1e !important;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    background-color: #f2f4f5 !important;
+  }
+}
+
+.roblox-card {
+  @apply bg-white border border-slate-200 rounded-lg shadow-sm hover:shadow-md transition-shadow;
+}
+
+.roblox-button {
+  @apply bg-[#00b2ff] text-white font-bold py-2 px-6 rounded-md hover:bg-[#0096d6] transition-colors flex items-center justify-center gap-2;
+}
+
+.roblox-button-secondary {
+  @apply bg-white text-[#1b1d1e] border border-slate-300 font-bold py-2 px-6 rounded-md hover:bg-slate-50 transition-colors flex items-center justify-center gap-2;
+}
