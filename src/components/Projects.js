@@ -49,7 +49,7 @@ const projects = [
     sourceUrl: "https://67sports.vercel.app/",
   },
   {
-    title: "Savoryz",
+    title: "Savory",
     description: "A food ordering website UI design for a sandwich shop, featuring a fresh and appetizing interface.",
     image: savoryzImage,
     tags: ["Food Delivery", "React", "UI/UX"],
