@@ -31,3 +31,124 @@
 .roblox-button-secondary {
   @apply bg-white text-[#1b1d1e] border border-slate-300 font-bold py-2 px-6 rounded-md hover:bg-slate-50 transition-colors flex items-center justify-center gap-2;
 }
+
+/* =============================================
+   WALK LEFT-RIGHT — Character Animation
+   Karakter jalan dari kiri ke kanan sampe
+   mentok, flip, balik ke kiri, mentok, repeat.
+   ============================================= */
+
+/*
+  WALK PATH (8s loop) — pakai left: 0% → 100% biar beneran sampai ujung banner:
+  0%   → left: 0%,    translateX(0%)     = kiri pas di tepi kiri
+  44%  → left: 100%,  translateX(-100%)  = kanan pas di tepi kanan
+  50%  → flip scaleX
+  94%  → left: 0%,    translateX(0%)     = balik ke tepi kiri
+  100% → flip scaleX
+*/
+@keyframes char3d-walk {
+  /* Mulai: tepi KIRI, hadap kanan */
+  0% {
+    left: 0%;
+    transform: translateX(0%) scaleX(1);
+  }
+  /* Jalan sampai tepi KANAN mentok (tanpa bounce) */
+  49.9% {
+    left: 100%;
+    transform: translateX(-100%) scaleX(1);
+  }
+  /* FLIP instan: sekarang hadap kiri */
+  50% {
+    left: 100%;
+    transform: translateX(-100%) scaleX(-1);
+  }
+  /* Jalan kembali sampai tepi KIRI mentok */
+  99.9% {
+    left: 0%;
+    transform: translateX(0%) scaleX(-1);
+  }
+  /* FLIP instan: sekarang hadap kanan lagi */
+  100% {
+    left: 0%;
+    transform: translateX(0%) scaleX(1);
+  }
+}
+
+/* Drop-shadow yang ikut langkah kaki */
+@keyframes char3d-lighting {
+  0%, 100% { filter: drop-shadow(0 20px 18px rgba(0,0,0,0.22)); }
+  50%       { filter: drop-shadow(0 12px 10px rgba(0,0,0,0.12)); }
+}
+
+/* Footstep vertical bounce */
+@keyframes char3d-bob {
+  0%, 100% { transform: translateY(0px);  }
+  50%       { transform: translateY(-7px); }
+}
+
+/* Ground shadow pulse ikut langkah */
+@keyframes char3d-ground-shadow {
+  0%, 100% { transform: scaleX(1.0) scaleY(1.0); opacity: 0.20; }
+  50%       { transform: scaleX(0.65) scaleY(0.7); opacity: 0.10; }
+}
+
+/* ---- Class Definitions ---- */
+
+/* Scene container: absolute, full banner, clips overflow */
+.char3d-scene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* Walker: absolute positioned — left goes 0% → 100% */
+.char3d-walker {
+  position: absolute;
+  bottom: 4px;
+  /* Lebar walker = lebar gambar, animation moves left property */
+  animation: char3d-walk 8s linear infinite;
+  will-change: left, transform;
+}
+
+/* Bob wrapper: vertical footstep bounce */
+.char3d-bob {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: char3d-bob 0.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Character image: drop-shadow pulse */
+.char3d-img {
+  animation: char3d-lighting 0.5s ease-in-out infinite;
+  will-change: filter;
+  cursor: pointer;
+  user-select: none;
+  display: block;
+}
+
+/* Ground shadow ellipse */
+.char3d-shadow {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  width: 68px;
+  height: 14px;
+  background: radial-gradient(ellipse, rgba(0,0,0,0.40) 0%, transparent 68%);
+  border-radius: 50%;
+  transform-origin: center;
+  margin-left: -34px;
+  animation: char3d-ground-shadow 0.5s ease-in-out infinite;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* Hover = pause semua animasi */
+.char3d-walker:hover,
+.char3d-walker:hover .char3d-bob,
+.char3d-walker:hover .char3d-img,
+.char3d-walker:hover .char3d-shadow {
+  animation-play-state: paused;
+}
+

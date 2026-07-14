@@ -8,18 +8,25 @@ const Hero = () => {
 
   return (
     <section className="bg-white overflow-hidden mb-8">
-      {/* Banner Area (Matches Screenshot) */}
-      <div className="h-64 sm:h-80 relative overflow-hidden bg-gradient-to-b from-[#e3e5e6] to-[#f2f4f5]">
-        {/* Full-Body Avatar in Center */}
-        <div className="absolute inset-0 flex items-center justify-center p-4">
-          <img
-            src="/images/duta_full.png"
-            alt="Full Avatar"
-            className="h-full object-contain drop-shadow-2xl scale-125 md:scale-135 transition-transform duration-700"
-          />
+      {/* Banner Area */}
+      <div className="h-72 sm:h-96 relative overflow-hidden bg-gradient-to-b from-[#e3e5e6] to-[#f2f4f5]">
+        {/* Full-Body Avatar — Walk Left-Right to Banner Edges */}
+        <div className="char3d-scene">
+          {/* Walker: absolute, jalan dari left:0% ke left:100% */}
+          <div className="char3d-walker">
+            <div className="char3d-bob relative flex flex-col items-center">
+              <div className="char3d-shadow" />
+              <img
+                src="/images/duta_full.png"
+                alt="Full Avatar"
+                className="char3d-img h-56 sm:h-72 md:h-80 object-contain"
+                title="Hover to pause!"
+              />
+            </div>
+          </div>
         </div>
 
-        {/* 3D Button (Matches Screenshot) */}
+        {/* 3D Button */}
         <div className="absolute top-4 right-4 bg-black/5 hover:bg-black/10 transition-colors backdrop-blur-sm text-slate-700 text-[11px] font-black px-3 py-1.5 rounded-md border border-black/10 cursor-pointer">
           3D
         </div>
