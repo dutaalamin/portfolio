@@ -7,6 +7,7 @@ import marvelImage from '../images/marvel.png';
 import sportsImage from '../images/67sports.png';
 import savoryzImage from '../images/savory.png';
 import bproImage from '../images/bpro.png';
+import colorwayImage from '../images/colorway.png';
 
 const projects = [
   {
@@ -16,6 +17,14 @@ const projects = [
     tags: ["Laravel", "React", "Tailwind CSS"],
     liveUrl: "https://gtech.gaisar.id/",
     sourceUrl: "https://gtech.gaisar.id/",
+  },
+  {
+    title: "Colorway",
+    description: "A modern color palette generator with smooth animations, one-click hex copying, and a minimalist interface.",
+    image: colorwayImage,
+    tags: ["React", "Vite", "Tailwind CSS"],
+    liveUrl: "https://colorways.vercel.app/",
+    sourceUrl: "https://colorways.vercel.app/",
   },
   {
     title: "ScreenV",
