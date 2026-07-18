@@ -6,8 +6,17 @@ import shopImage from '../images/shop.png';
 import marvelImage from '../images/marvel.png';
 import sportsImage from '../images/67sports.png';
 import savoryzImage from '../images/savory.png';
+import bproImage from '../images/bpro.png';
 
 const projects = [
+  {
+    title: "Bprotraining",
+    description: "A comprehensive platform for soccer training and gym workouts, designed to guide users on becoming professional athletes.",
+    image: bproImage,
+    tags: ["Laravel", "React", "Tailwind CSS"],
+    liveUrl: "https://gtech.gaisar.id/",
+    sourceUrl: "https://gtech.gaisar.id/",
+  },
   {
     title: "ScreenV",
     description: "Movie discovery platform with real-time ratings and personalized watchlists using TMDB API.",
