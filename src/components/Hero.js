@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaLinkedin, FaInstagram, FaSpotify } from 'react-icons/fa';
 
 const Hero = () => {
 
@@ -96,6 +96,16 @@ const Hero = () => {
                   <FaInstagram size={10} className="text-white" />
                 </div>
                 <span className="text-[11px] font-black text-slate-800 tracking-tight">Instagram</span>
+              </a>
+              <a
+                href="https://open.spotify.com/playlist/2gQgfHfdjW8S0S4Ypfu1jV?si=c2dfb4d1600f4b4f"
+                target="_blank" rel="noopener noreferrer"
+                className="bg-[#e3e5e6] hover:bg-[#d6d9da] rounded-full px-4 py-1.5 flex items-center gap-2 transition-colors cursor-pointer"
+              >
+                <div className="w-4 h-4 bg-[#1DB954] rounded-full flex items-center justify-center">
+                  <FaSpotify size={10} className="text-white" />
+                </div>
+                <span className="text-[11px] font-black text-slate-800 tracking-tight">Spotify</span>
               </a>
             </div>
           </div>
