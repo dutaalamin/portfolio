@@ -46,7 +46,7 @@ const projects = [
     sourceUrl: "https://github.com/dutaalamin/ecommerce",
   },
   {
-    title: "Dutadraken",
+    title: "Draken",
     description: "Software and tools service platform similar to HubSpot, providing all-in-one business solutions.",
     image: drakenImage,
     tags: ["SaaS", "React", "Tailwind CSS"],
@@ -54,7 +54,7 @@ const projects = [
     sourceUrl: "https://dutadraken.vercel.app/",
   },
   {
-    title: "Dutastinger",
+    title: "Stinger",
     description: "Reliable and high-performance web hosting service platform.",
     image: stingerImage,
     tags: ["Hosting", "Web App", "React"],
@@ -62,7 +62,7 @@ const projects = [
     sourceUrl: "https://dutastinger.vercel.app/",
   },
   {
-    title: "Dutabravo",
+    title: "Bravo",
     description: "Turn Every Order into a Lifetime Customer. One AI-powered platform for all marketing and sales needs (Email, SMS, WhatsApp).",
     image: bravoImage,
     tags: ["Marketing", "AI", "SaaS"],
