@@ -8,9 +8,9 @@ import sportsImage from '../images/67sports.png';
 import savoryzImage from '../images/savory.png';
 import bproImage from '../images/bpro.png';
 import colorwayImage from '../images/colorway.png';
-// Temporary placeholders for the new projects
-import weatheryImage from '../images/weathery.png';
-import cookidImage from '../images/cookid.png';
+import drakenImage from '../images/draken.png';
+import stingerImage from '../images/stinger.png';
+import bravoImage from '../images/bravo.png';
 
 const projects = [
   {
@@ -48,7 +48,7 @@ const projects = [
   {
     title: "Dutadraken",
     description: "Software and tools service platform similar to HubSpot, providing all-in-one business solutions.",
-    image: weatheryImage, // Using placeholder until you add dutadraken.png
+    image: drakenImage,
     tags: ["SaaS", "React", "Tailwind CSS"],
     liveUrl: "https://dutadraken.vercel.app/",
     sourceUrl: "https://dutadraken.vercel.app/",
@@ -56,7 +56,7 @@ const projects = [
   {
     title: "Dutastinger",
     description: "Reliable and high-performance web hosting service platform.",
-    image: cookidImage, // Using placeholder until you add dutastinger.png
+    image: stingerImage,
     tags: ["Hosting", "Web App", "React"],
     liveUrl: "https://dutastinger.vercel.app/",
     sourceUrl: "https://dutastinger.vercel.app/",
@@ -64,7 +64,7 @@ const projects = [
   {
     title: "Dutabravo",
     description: "Turn Every Order into a Lifetime Customer. One AI-powered platform for all marketing and sales needs (Email, SMS, WhatsApp).",
-    image: screenvImage, // Using placeholder until you add dutabravo.png
+    image: bravoImage,
     tags: ["Marketing", "AI", "SaaS"],
     liveUrl: "https://dutabravo.vercel.app/",
     sourceUrl: "https://dutabravo.vercel.app/",
