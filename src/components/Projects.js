@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import screenvImage from '../images/screenv.png';
 import fishImage from '../images/fishytype.png';
@@ -8,6 +8,9 @@ import sportsImage from '../images/67sports.png';
 import savoryzImage from '../images/savory.png';
 import bproImage from '../images/bpro.png';
 import colorwayImage from '../images/colorway.png';
+// Temporary placeholders for the new projects
+import weatheryImage from '../images/weathery.png';
+import cookidImage from '../images/cookid.png';
 
 const projects = [
   {
@@ -41,6 +44,30 @@ const projects = [
     tags: ["React", "Firebase", "Stripe API", "Redux"],
     liveUrl: "https://casavastore.vercel.app/",
     sourceUrl: "https://github.com/dutaalamin/ecommerce",
+  },
+  {
+    title: "Dutadraken",
+    description: "Software and tools service platform similar to HubSpot, providing all-in-one business solutions.",
+    image: weatheryImage, // Using placeholder until you add dutadraken.png
+    tags: ["SaaS", "React", "Tailwind CSS"],
+    liveUrl: "https://dutadraken.vercel.app/",
+    sourceUrl: "https://dutadraken.vercel.app/",
+  },
+  {
+    title: "Dutastinger",
+    description: "Reliable and high-performance web hosting service platform.",
+    image: cookidImage, // Using placeholder until you add dutastinger.png
+    tags: ["Hosting", "Web App", "React"],
+    liveUrl: "https://dutastinger.vercel.app/",
+    sourceUrl: "https://dutastinger.vercel.app/",
+  },
+  {
+    title: "Dutabravo",
+    description: "Turn Every Order into a Lifetime Customer. One AI-powered platform for all marketing and sales needs (Email, SMS, WhatsApp).",
+    image: screenvImage, // Using placeholder until you add dutabravo.png
+    tags: ["Marketing", "AI", "SaaS"],
+    liveUrl: "https://dutabravo.vercel.app/",
+    sourceUrl: "https://dutabravo.vercel.app/",
   },
   {
     title: "Fishytype",
@@ -77,56 +104,71 @@ const projects = [
 ];
 
 const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
+  const displayedProjects = showAll ? projects : projects.slice(0, 4);
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {projects.map((project, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          whileHover={{ y: -8 }}
-          className="bg-white rounded-2xl overflow-hidden border border-slate-100 hover:shadow-xl hover:shadow-indigo-100/30 transition-all duration-300 group flex flex-col h-full"
+    <div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {displayedProjects.map((project, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -8 }}
+            className="bg-white rounded-2xl overflow-hidden border border-slate-100 hover:shadow-xl hover:shadow-indigo-100/30 transition-all duration-300 group flex flex-col h-full"
+          >
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex flex-col h-full">
+              {/* Image Container */}
+              <div className="relative aspect-video overflow-hidden bg-slate-50 border-b border-slate-100">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-indigo-900/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </div>
+
+              {/* Content Container */}
+              <div className="p-4 flex flex-col flex-1 space-y-3">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xs font-black text-slate-800 uppercase tracking-tight group-hover:text-indigo-600 transition-colors">
+                    {project.title}
+                  </h3>
+                  <span className="text-[10px] text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+                </div>
+
+                <p className="text-[10px] text-slate-500 font-semibold leading-relaxed line-clamp-3 mb-2 flex-1">
+                  {project.description}
+                </p>
+
+                {/* Technology Tags */}
+                <div className="flex flex-wrap gap-1 pt-2 border-t border-slate-50">
+                  {project.tags.slice(0, 3).map((tag, tagIdx) => (
+                    <span
+                      key={tagIdx}
+                      className="text-[8px] font-black px-2 py-0.5 bg-indigo-50 text-indigo-400 rounded-md uppercase tracking-tighter"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </a>
+          </motion.div>
+        ))}
+      </div>
+      
+      {/* Show More Projects Button */}
+      <div className="mt-8 flex justify-center">
+        <button
+          onClick={() => setShowAll(!showAll)}
+          className="bg-[#e3e5e6] hover:bg-[#d6d9da] text-slate-700 font-black py-2.5 px-6 rounded-md transition-colors text-[10px] md:text-xs uppercase tracking-tight"
         >
-          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex flex-col h-full">
-            {/* Image Container */}
-            <div className="relative aspect-video overflow-hidden bg-slate-50 border-b border-slate-100">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-indigo-900/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-            </div>
-
-            {/* Content Container */}
-            <div className="p-4 flex flex-col flex-1 space-y-3">
-              <div className="flex items-center justify-between">
-                <h3 className="text-xs font-black text-slate-800 uppercase tracking-tight group-hover:text-indigo-600 transition-colors">
-                  {project.title}
-                </h3>
-                <span className="text-[10px] text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
-              </div>
-
-              <p className="text-[10px] text-slate-500 font-semibold leading-relaxed line-clamp-3 mb-2 flex-1">
-                {project.description}
-              </p>
-
-              {/* Technology Tags */}
-              <div className="flex flex-wrap gap-1 pt-2 border-t border-slate-50">
-                {project.tags.slice(0, 3).map((tag, tagIdx) => (
-                  <span
-                    key={tagIdx}
-                    className="text-[8px] font-black px-2 py-0.5 bg-indigo-50 text-indigo-400 rounded-md uppercase tracking-tighter"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </a>
-        </motion.div>
-      ))}
+          {showAll ? 'Show Less' : 'View More Projects'}
+        </button>
+      </div>
     </div>
   );
 };
